@@ -1,12 +1,14 @@
 "use client";
 
+import { Code2, Folder, Mail, User } from "lucide-react";
+
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "Sobre", href: "#about" },
-  { label: "Projetos", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contato", href: "#contact" },
+  { label: "Sobre", href: "#about", icon: User },
+  { label: "Projetos", href: "#projects", icon: Folder },
+  { label: "Skills", href: "#skills", icon: Code2 },
+  { label: "Contato", href: "#contact", icon: Mail },
 ];
 
 export default function Navbar() {
@@ -34,21 +36,52 @@ export default function Navbar() {
           className="font-display text-[#F5F5F5] text-lg font-bold tracking-tight hover:text-[#D094EA] transition-colors"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          SEU NOME<span className="text-[#D094EA]">.</span>
+          AMANDA BERWIG<span className="text-[#D094EA]">.</span>
+          {/* NAV COM LOGO
+          <a href="#" className="group relative flex items-center h-20 w-[120px]"> 
+           <Image
+            src="/logo-light.png"
+            alt="Logo"
+            fill
+            className="object-contain transition-opacity duration-300 group-hover:opacity-0"
+            priority
+          />
+          <Image
+            src="/logo-purple.png"
+            alt="Logo hover"
+            fill
+            className="object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            priority
+          />*/}
         </a>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="text-sm text-[#888] hover:text-[#F5F5F5] transition-colors tracking-wide"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+        <ul className="hidden md:flex items-center gap-6 px-5 py-2 bg-zinc-800 rounded-xl">
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <li key={link.href} className="relative group">
+                <a
+                  href={link.href}
+                  aria-label={link.label}
+                  className="flex items-center justify-center rounded-md p-1 text-white hover:bg-[#914bf1] transition-colors"
+                >
+                  <Icon size={22} strokeWidth={1.8} />
+
+                  {/* Tooltip */}
+                  <span
+                    className="absolute -bottom-9 left-1/2 -translate-x-1/2 
+                           whitespace-nowrap rounded-md bg-[#111] px-3 py-1.5 
+                           text-xs text-[#F5F5F5] opacity-0 shadow-md 
+                           transition-all duration-200 
+                           group-hover:opacity-100 group-hover:translate-y-1"
+                  >
+                    {link.label}
+                  </span>
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* CTA */}
@@ -56,7 +89,7 @@ export default function Navbar() {
           href="#contact"
           className="hidden md:inline-flex items-center gap-2 px-4 py-2 border border-[#D094EA] text-[#D094EA] text-sm rounded-full hover:bg-[#D094EA] hover:text-[#0A0A0A] transition-all duration-200 font-medium"
         >
-          Trabalhe comigo
+          Vamos conversar
         </a>
 
         {/* Mobile Menu Toggle */}
@@ -95,7 +128,7 @@ export default function Navbar() {
             className="inline-flex w-fit items-center gap-2 px-4 py-2 border border-[#D094EA] text-[#D094EA] text-sm rounded-full"
             onClick={() => setMenuOpen(false)}
           >
-            Trabalhe comigo
+            Vamos conversar
           </a>
         </div>
       )}
