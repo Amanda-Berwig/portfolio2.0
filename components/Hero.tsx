@@ -22,7 +22,15 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-6xl mx-auto overflow-hidden"
+      className="relative
+    min-h-[85vh] md:min-h-screen
+    flex flex-col justify-center
+    px-6
+    pt-20 md:pt-24
+    pb-10 md:pb-16
+    max-w-6xl mx-auto
+    overflow-hidden
+  "
     >
       {/* Background glow */}
       <div
@@ -134,7 +142,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in delay-500"
+        className="hidden md:flex  absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-0 animate-fade-in delay-500"
         style={{ animationFillMode: "forwards" }}
       >
         <div className="w-px h-12 bg-gradient-to-b from-[#D094EA] to-transparent" />
