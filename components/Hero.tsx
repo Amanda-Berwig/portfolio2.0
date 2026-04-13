@@ -52,9 +52,9 @@ export default function Hero() {
           animationFillMode: "forwards",
         }}
       >
-        Designer
+        Front-end Dev
         <br />
-        <span className="text-[#D094EA]">&</span> Dev
+        <span className="text-[#D094EA]">&</span> Web Scraper
         <span className="text-[#D094EA]">.</span>
       </h1>
 
@@ -81,7 +81,7 @@ export default function Hero() {
           {/* Social links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/seuperfil"
+              href="https://github.com/Amanda-Berwig"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#555] hover:text-[#F5F5F5] transition-colors"
@@ -97,7 +97,7 @@ export default function Hero() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/seuperfil"
+              href="https://linkedin.com/in/amanda-berwig"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#555] hover:text-[#F5F5F5] transition-colors"
@@ -113,19 +113,19 @@ export default function Hero() {
               </svg>
             </a>
             <a
-              href="https://twitter.com/seuperfil"
+              href="https://www.instagram.com/amanda_berwig/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#555] hover:text-[#F5F5F5] transition-colors"
-              aria-label="Twitter / X"
+              aria-label="Instagram"
             >
               <svg
-                width="18"
-                height="18"
+                width="20"
+                height="20"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm9.5 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z" />
               </svg>
             </a>
           </div>
