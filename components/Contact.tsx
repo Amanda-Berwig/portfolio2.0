@@ -29,11 +29,33 @@ export default function Contact() {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: integre com seu serviço de email (Resend, EmailJS, Formspree, etc.)
-    console.log("Form data:", formState);
-    setSent(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (response.ok) {
+        setSent(true);
+        setFormState({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        console.error("Failed to send message");
+        alert("Erro ao enviar mensagem. Tente novamente.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Ocorreu um erro ao enviar a mensagem.");
+    }
   }
 
   return (
@@ -60,14 +82,14 @@ export default function Contact() {
             em mente?
           </h2>
           <p className="text-[#666] text-base leading-relaxed mb-10">
-            Estou sempre aberto a conversar sobre novos projetos, ideias
+            Estou sempre aberta a conversar sobre novos projetos, ideias
             criativas ou oportunidades de colaboração. Me manda uma mensagem!
           </p>
 
           {/* Contact info */}
           <div className="flex flex-col gap-4">
             <a
-              href="mailto:seu@email.com"
+              href="amanda.berwig@gmail.com"
               className="group flex items-center gap-3 text-[#888] hover:text-[#D094EA] transition-colors"
             >
               <div className="w-9 h-9 rounded-full border border-[#1F1F1F] group-hover:border-[#D094EA]/50 flex items-center justify-center transition-colors">
@@ -83,11 +105,11 @@ export default function Contact() {
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
               </div>
-              <span className="text-sm">seu@email.com</span>
+              <span className="text-sm">amanda.berwig@gmail.com</span>
             </a>
 
             <a
-              href="https://linkedin.com/in/seuperfil"
+              href="https://linkedin.com/in/amanda-berwig"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 text-[#888] hover:text-[#D094EA] transition-colors"
@@ -102,7 +124,7 @@ export default function Contact() {
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </div>
-              <span className="text-sm">linkedin.com/in/seuperfil</span>
+              <span className="text-sm">linkedin.com/in/amanda-berwig</span>
             </a>
           </div>
         </div>

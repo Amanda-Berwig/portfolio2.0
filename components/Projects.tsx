@@ -1,52 +1,73 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-// ────────────────────────────────────────────────
-// EDITE AQUI OS SEUS PROJETOS
-// ────────────────────────────────────────────────
 const projects = [
   {
     id: "01",
-    title: "Projeto Alpha",
-    category: "Design de Produto",
+    title: "Landing Page ",
+    category: "Institucional · One Page",
     description:
-      "Redesign completo da experiência de onboarding, resultando em 40% mais retenção de usuários.",
-    tags: ["Figma", "React", "TypeScript"],
-    link: "#",
-    image: "/project-1.jpg", // coloque sua imagem em /public/project-1.jpg
+      "Site institucional one-page desenvolvido para a Lange Termoplásticos, com foco em geração de leads, apresentação de portfólio e integração com canais digitais.",
+    tags: ["Google Forms", "React", "JavaScript", "Tailwind CSS"],
+    link: "https://lange-iota.vercel.app/",
+    image: "/project-1.png", // coloque sua imagem em /public/project-1.jpg
     featured: true,
   },
   {
     id: "02",
-    title: "Projeto Beta",
-    category: "Web App",
+    title: "Landing Page - Hidrolacer",
+    category: "Landing Page",
     description:
-      "Plataforma SaaS de gestão de equipes remotas com design system próprio.",
-    tags: ["Next.js", "Tailwind", "Prisma"],
-    link: "#",
-    image: "/project-2.jpg",
+      "Landing page institucional para Hidrolacer, empresa de soluções para geração de energia. Foco em conversão e apresentação de portfólio.",
+    tags: ["Next.js", "Tailwind CSS", "Typescript"],
+    link: "https://hidrolacer.vercel.app/",
+    image: "/project-2.png",
     featured: true,
   },
   {
     id: "03",
-    title: "Projeto Gamma",
-    category: "E-commerce",
+    title: "GitHub Profile Finder",
+    category: "Estudos · Processo seletivo",
     description:
-      "Loja virtual com foco em conversão e experiência de compra premium.",
-    tags: ["Shopify", "React", "Framer Motion"],
-    link: "#",
-    image: "/project-3.jpg",
+      "Aplicação que consome a API pública do GitHub para buscar perfis em tempo real, com tratamento de erros e loading state. Desenvolvido para processo seletivo da Avanti.",
+    tags: ["React", "Tailwind CSS", "Github API", "Fetch", "Figma to Code"],
+    link: "https://amanda-berwig.github.io/busca-github/",
+    image: "/project-3.png",
     featured: false,
   },
   {
     id: "04",
-    title: "Projeto Delta",
-    category: "Branding",
-    description: "Identidade visual e design system para startup de fintech.",
-    tags: ["Figma", "Illustrator", "Brand"],
-    link: "#",
-    image: "/project-4.jpg",
+    title: "Web commerce",
+    category: "Estudos · Processo seletivo",
+    description:
+      "E-commerce responsivo com campo de busca interativo e carrosséis funcionais. Foco em fidelidade ao layout do Figma e experiência mobile-first.",
+    tags: ["Responsividade", "Javascript", "Swiper.js", "Figma to Code"],
+    link: "https://innovation-class.vercel.app/",
+    image: "/project-4.png",
+    featured: false,
+  },
+  {
+    id: "05",
+    title: "Organo",
+    category: "Estudos ",
+    description:
+      "Aplicação para visualizar e gerenciar a estrutura de times de uma empresa. Desenvolvido durante o curso de React da Alura, com foco em componentização e hooks.",
+    tags: ["Javascript", "React", "Hooks"],
+    link: "https://organo-psi-three.vercel.app/",
+    image: "/project-6.png",
+    featured: false,
+  },
+  {
+    id: "06",
+    title: "ToDoList",
+    category: "Estudos ",
+    description:
+      "Lista de tarefas com criação, conclusão e remoção de itens. Projeto focado em praticar componentização, gerenciamento de estado e eventos no React.",
+    tags: ["React", "Javascript", "Tailwind CSS"],
+    link: "https://amanda-berwig.github.io/ToDoList/",
+    image: "/project-5.png",
     featured: false,
   },
 ];
@@ -90,18 +111,12 @@ function ProjectCard({
         <div className="relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#111] border border-[#1F1F1F] mb-5 group-hover:border-[#D094EA]/30 transition-colors">
           {/* Replace with <img src={project.image} ... /> when you have images */}
           <div className="absolute inset-0 flex items-center justify-center text-[#222] group-hover:text-[#333] transition-colors">
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="0.75"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
+            <Image
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover object-center"
+              fill
+            />
           </div>
 
           {/* Hover overlay */}
@@ -189,14 +204,14 @@ export default function Projects() {
             className="text-4xl md:text-5xl font-bold text-[#F5F5F5]"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Trabalhos
+            Projetos &
             <br />
-            <span className="text-[#444]">selecionados</span>
+            <span className="text-[#444]">estudos</span>
           </h2>
         </div>
 
         <a
-          href="https://github.com/seuperfil"
+          href="https://github.com/amanda-berwig"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm text-[#888] hover:text-[#F5F5F5] transition-colors border-b border-[#333] hover:border-[#888] pb-1"

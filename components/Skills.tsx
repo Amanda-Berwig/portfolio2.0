@@ -2,21 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// ────────────────────────────────────────────────
-// EDITE AQUI AS SUAS SKILLS
-// ────────────────────────────────────────────────
 const skillGroups = [
   {
     category: "Design",
-    skills: [
-      "Figma",
-      "Framer",
-      "Adobe XD",
-      "Illustrator",
-      "Photoshop",
-      "Prototyping",
-      "Design System",
-    ],
+    skills: ["Figma", "Design System", "Responsividade"],
   },
   {
     category: "Frontend",
@@ -26,25 +15,26 @@ const skillGroups = [
       "TypeScript",
       "Tailwind CSS",
       "Framer Motion",
-      "GSAP",
-      "Three.js",
+      "HTML",
+      "CSS",
+      "JavaScript",
     ],
   },
   {
-    category: "Backend",
-    skills: [
-      "Node.js",
-      "PostgreSQL",
-      "Prisma",
-      "REST API",
-      "GraphQL",
-      "Supabase",
-      "Docker",
-    ],
+    category: "Automações & Backend",
+    skills: ["Node.js", "Puppeteer", "Web Scraping"],
   },
   {
     category: "Ferramentas",
-    skills: ["Git", "GitHub", "Vercel", "Linear", "Notion", "Slack", "VS Code"],
+    skills: [
+      "Git",
+      "GitHub",
+      "Vercel",
+      "Linear",
+      "Git Kraken",
+      "VS Code",
+      "IA",
+    ],
   },
 ];
 
