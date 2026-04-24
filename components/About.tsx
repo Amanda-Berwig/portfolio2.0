@@ -87,7 +87,7 @@ export default function About() {
             Entrego código limpo, aprendo rápido e sei trabalhar com autonomia.
           </p>
 
-          {/* <a
+          <a
             href="/curriculo.pdf"
             className="inline-flex items-center gap-2 text-sm text-[#F5F5F5] border-b border-[#333] hover:border-[#D094EA] hover:text-[#D094EA] transition-all pb-1"
           >
@@ -102,7 +102,7 @@ export default function About() {
             >
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
-          </a> */}
+          </a>
         </div>
 
         {/* Right: stats + photo placeholder */}
